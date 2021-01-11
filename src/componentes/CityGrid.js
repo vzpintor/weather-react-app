@@ -5,6 +5,7 @@ import { WeatherComponent } from "./WeatherComponent";
 export const CityGrid = ({ city }) => {
   const { data: weathers, loading } = useFetchWeather(city);
 
+  console.log(!weathers);
   return (
     <>
       <div className="alert alert-dark p-3" role="alert">
@@ -16,9 +17,15 @@ export const CityGrid = ({ city }) => {
       {loading && <p className="animate__animated animate__flash">Loading</p>}
 
       <div className="row">
-        {weathers.map((weather) => (
-          <WeatherComponent key={weather.id} {...weather} />
-        ))}
+        {weathers.length > 0 ? (
+          weathers.map((weather) => (
+            <WeatherComponent key={weather.id} {...weather} />
+          ))
+        ) : (
+          <div className="alert alert-warning m-auto" role="alert">
+            No se encontro información
+          </div>
+        )}
       </div>
     </>
   );

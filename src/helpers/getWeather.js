@@ -6,6 +6,9 @@ export const getWeather = async (city) => {
   const response = await fetch(url);
   const { list } = await response.json();
 
+  if (!list) {
+    return [];
+  }
   return list.map((weather) => {
     return {
       id: weather.dt,
