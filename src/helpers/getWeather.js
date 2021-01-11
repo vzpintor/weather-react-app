@@ -1,5 +1,5 @@
 export const getWeather = async (city) => {
-  const url = `http://api.openweathermap.org/data/2.5/forecast?q=${encodeURI(
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURI(
     city
   )}&appid=4141e88d6f7642acd0390d5cba1099ef&units=metric&lang=es`;
 
