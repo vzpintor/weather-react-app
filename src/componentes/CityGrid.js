@@ -7,9 +7,11 @@ export const CityGrid = ({ city }) => {
 
   return (
     <>
-      <h3>
-        Climas para: <span className="border-bottom">{city}</span>
-      </h3>
+      <div className="alert alert-dark p-3" role="alert">
+        <h3>
+          Climas para: <span className="border-bottom">{city}</span>
+        </h3>
+      </div>
 
       {loading && <p className="animate__animated animate__flash">Loading</p>}
 
