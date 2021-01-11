@@ -5,7 +5,6 @@ export const AddCity = ({ setCities }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
-    console.log(e.target.value);
     setInputValue(e.target.value);
   };
 

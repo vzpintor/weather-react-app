@@ -1,11 +1,9 @@
 import React from "react";
 
 export const WeatherComponent = (weather) => {
-  console.log(weather);
-
   return (
     <div className="col-sm-12 col-md-6 col-lg-3 p-2">
-      <div className="card shadow-lg">
+      <div className="card shadow-lg animate__animated animate__fadeIn">
         <div className="card-body">
           <div className="row p-1">
             <div>
@@ -22,7 +20,9 @@ export const WeatherComponent = (weather) => {
             </div>
             <div className="col">{weather.temperature}&deg;</div>
           </div>
-          <div className="card-footer text-muted text-capitalize">{weather.description}</div>
+          <div className="card-footer text-muted text-capitalize">
+            {weather.description}
+          </div>
         </div>
       </div>
     </div>
