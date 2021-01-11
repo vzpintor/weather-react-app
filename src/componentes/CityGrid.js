@@ -8,7 +8,9 @@ export const CityGrid = ({ city }) => {
   }, []);
 
   const getCity = async () => {
-    const url = `http://api.openweathermap.org/data/2.5/forecast?q=Mexico&appid=4141e88d6f7642acd0390d5cba1099ef&units=metric&lang=es`;
+    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${encodeURI(
+      city
+    )}&appid=4141e88d6f7642acd0390d5cba1099ef&units=metric&lang=es`;
 
     const response = await fetch(url);
     const { list } = await response.json();
@@ -29,10 +31,13 @@ export const CityGrid = ({ city }) => {
   };
 
   return (
-    <div>
-      {weathers.map((weather) => (
-        <WeatherComponent key={weather.id} {...weather} />
-      ))}
-    </div>
+    <>
+      <h3>Climas para: <span className="border-bottom">{city}</span></h3>
+      <div className="row">
+        {weathers.map((weather) => (
+          <WeatherComponent key={weather.id} {...weather} />
+        ))}
+      </div>
+    </>
   );
 };

@@ -12,16 +12,14 @@ export const CitiesApp = () => {
   // };
 
   return (
-    <>
+    <div className="container">
       <h2>Cities App</h2>
       <AddCity setCities={setCities} />
       <hr />
 
-      <ol>
-        {cities.map((city) => (
-          <CityGrid key={city} city={city} />
-        ))}
-      </ol>
-    </>
+      {cities.map((city) => (
+        <CityGrid key={city} city={city} />
+      ))}
+    </div>
   );
 };
